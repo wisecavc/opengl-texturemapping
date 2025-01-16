@@ -200,7 +200,9 @@ float	Time;					// used for animation, this has a value between 0. and 1.
 int		Xmouse, Ymouse;			// mouse values
 float	Xrot, Yrot;				// rotation angles in degrees
 
-// added for project 6
+/* 
+Added by wisecavc as project implementation
+*/
 GLuint	SalmonDL;				// display list for salmon.obj
 float	amp_mod;				// modifies aplitude of salmon wiggle
 float	speed_mod;				// modifies speed of salmon wiggle
@@ -321,7 +323,9 @@ TimeOfDaySeed( )
 #include "glslprogram.cpp"
 // #include "vertexbufferobject.cpp"
 
-// added for project 6
+/* 
+Added by wisecavc as project implementation
+*/
 GLSLProgram	Salmon;		// VS+FS shader program name
 
 // main program:
@@ -486,7 +490,9 @@ Display( )
 	glEnable( GL_NORMALIZE );
 
 
-	// for project 6
+	/* 
+	Added by wisecavc as project implementation
+	*/
 
 	Salmon.Use();	// turns on salmon shader programs
 
@@ -795,8 +801,10 @@ InitGraphics( )
 
 	// all other setups go here, such as GLSLProgram and KeyTime setups:
 
-	// added for project 6
-
+	/* 
+	Added by wisecavc as project implementation
+	*/
+	
 	// sets up vertex and fragment shader programs
 	Salmon.Init();
 	bool valid = Salmon.Create("salmon.vert", "salmon.frag");
@@ -832,9 +840,9 @@ InitLists( )
 	float dz = BOXSIZE / 2.f;
 	glutSetWindow( MainWindow );
 
-	// create the object:
-	
-	// added for project 6
+	/* 
+	Added by wisecavc as project implementation
+	*/
 
 	// creates display list for salmon.obj
 	SalmonDL = glGenLists(1);
@@ -843,7 +851,6 @@ InitLists( )
 	glEndList();
 
 	// create the axes:
-
 	AxesList = glGenLists( 1 );
 	glNewList( AxesList, GL_COMPILE );
 		glLineWidth( AXES_WIDTH );
@@ -1100,7 +1107,9 @@ Reset( )
 	NowProjection = PERSP;
 	Xrot = Yrot = 0.;
 
-	// project 6
+	/* 
+	Added by wisecavc as project implementation
+	*/
 	amp_mod = 0.5;
 	freq_mod = 0.5;
 	speed_mod = 0.5;
