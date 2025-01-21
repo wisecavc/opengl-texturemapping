@@ -22,9 +22,8 @@ main( )
 	vST = gl_MultiTexCoord0.st;
 	vec3 vert = gl_Vertex.xyz;
 
-	// which direction on the salmon will do the wriggling?
 	// uSpeed multiplies time to get distance (wriggled)
-	// uFreq multiplies position to get how many wriggles we see?
+	// uFreq multiplies position to get how many wriggles seen
 	vert.x += uAmp * sin( TWOPI*( (uSpeed*uTime)+(uFreq*vert.z/LENGTH) ) );
 
 	// setup for per-fragment lighting:

@@ -29,7 +29,7 @@ main( )
 	}
 
 
-	// now do the per-fragment lighting:
+	// does the per-fragment lighting:
 
 	vec3 Normal    = normalize(vN);
 	vec3 Light     = normalize(vL);
@@ -37,11 +37,11 @@ main( )
 
 	vec3 ambient = uKa * myColor;
 
-	float d = max( dot(Normal,Light), 0. );       // only do diffuse if the light can see the point
+	float d = max( dot(Normal,Light), 0. );       // only does diffuse if the light can see the point
 	vec3 diffuse = uKd * d * myColor;
 
 	float s = 0.;
-	if( d > 0. )	          // only do specular if the light can see the point
+	if( d > 0. )	          // only does specular if the light can see the point
 	{
 		vec3 ref = normalize(  reflect( -Light, Normal )  );
 		float cosphi = dot( Eye, ref );
